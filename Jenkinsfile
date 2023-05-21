@@ -18,5 +18,15 @@ pipeline{
             }
         }
       }
+    stage('Push Docker image to Docker Hub'){
+      steps{
+        script{
+          withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+            sh 'docker login -u d21it185rajbapodra -p ${dockerhubpwd}'
+            
+            sh 'docker push 'cldcimage/devops-integration'
+          }
+      }
+    }
   }
 }
