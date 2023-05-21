@@ -14,7 +14,7 @@ pipeline{
       stage('Build Docker image'){
         steps{
             script{
-                sh 'docker build -t cldc/devops-integration .'
+                sh 'docker build -t cldcimage/devops-integration .'
             }
         }
       }
