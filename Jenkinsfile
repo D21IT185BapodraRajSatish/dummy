@@ -14,7 +14,7 @@ pipeline{
       stage('Build Docker image'){
         steps{
             script{
-                sh 'docker build -t cldcimage/devops-integration .'
+                sh 'docker build -t d21it185rajbapodra/cldcimage .'
             }
         }
       }
@@ -24,7 +24,7 @@ pipeline{
           withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
             sh 'docker login -u d21it185rajbapodra -p ${dockerhubpwd}'
             
-            sh 'docker push cldcimage/devops-integration'
+            sh 'docker push d21it185rajbapodra/cldcimage'
           }
         }
       }
