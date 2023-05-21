@@ -9,6 +9,7 @@ pipeline{
             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/D21IT185BapodraRajSatish/dummy']])
             sh 'mvn clean install'
           }
+
       }
   }
 }
