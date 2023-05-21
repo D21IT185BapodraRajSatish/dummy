@@ -26,6 +26,7 @@ pipeline{
             
             sh 'docker push 'cldcimage/devops-integration'
           }
+        }
       }
     }
   }
