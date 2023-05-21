@@ -11,5 +11,12 @@ pipeline{
           }
 
       }
+      stage('Build Docker image'){
+        steps{
+            script{
+                sh 'docker build -t CLDC/devops-integration .'
+            }
+        }
+      }
   }
 }
