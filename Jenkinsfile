@@ -24,10 +24,10 @@ pipeline{
           withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
             sh 'docker login -u d21it185rajbapodra -p ${dockerhubpwd}'
             
-            sh 'docker push 'cldcimage/devops-integration'
+            sh 'docker push cldcimage/devops-integration'
           }
         }
-      }
+      
     }
   }
 }
